@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": "Troliste",
+      "firstName": "Mohamed",
+      "lastName": "Mseddi",
+      "email": "mameya.mseddi@gmail.com",
+      "password": "1996medmsd",
+      "role": "Admin"
+    },
+    {
+      "id": "Houssem",
+      "password": "triki",
+      "firstName": "Houssem",
+      "lastName": "Triki",
+      "email": "houssem.triki99@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "id": "Belhssan",
+      "password": "jerbi",
+      "firstName": "Belhssan",
+      "lastName": "Jerbi",
+      "email": "jerbi@gmail.com",
+      "role": "Responsible"
+    }
+  ],
+  "projects": [
+    {
+      "id": "Kanbanchi",
+      "description": "Our first Kanbanchi project with Angular",
+      "responsible": "Troliste",
+      "team": [
+        "Belhssan",
+        "Houssem"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "First Task",
+      "createdBy": "Troliste",
+      "date": "3/14/2020, 12:30:25 AM",
+      "type": "todo"
+    } ,
+    {
+      "id": 2,
+      "name": "Second Task",
+      "createdBy": "Troliste",
+      "date": "3/14/2020, 12:20:00 AM",
+      "type": "doing"
+    }
+  ]
+}
