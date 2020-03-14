@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text"
+             (ngModelChange)="onUsernameChange($event)"
+             matInput
+             [formControl]="userFilter"
+             [matAutocomplete]="auto">
+      <button mat-button *ngIf="userFilter.value" matSuffix mat-icon-button aria-label="Clear" (click)="userFilter.setValue('')">
+        <mat-icon [ngStyle]="{'color':'red'}">close</mat-icon>
+      </button>
+      <mat-autocomplete  #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <div class="row">
+   <div *ngFor="let user of filteredUsers" class="col-lg-4 col-md-6 col-sm-12 col-xl-4 my-3">
+    <user-card [user]="user"></user-card>
+   </div>
+ </div>
+</div>

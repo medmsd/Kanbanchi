@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>
+    {{user.id}}
+  </mat-card-title>
+  <mat-card-content>
+    <p> Name : {{user.firstName}} {{user.lastName}}</p>
+    <p> Email : {{user.email}}</p>
+    <div [ngSwitch]="user.role">
+      <span style="color:dodgerblue" *ngSwitchCase="'Admin'">{{user.role}}</span>
+      <span style="color:green" *ngSwitchCase="'Developer'">{{user.role}}</span>
+      <span style="color:orange" *ngSwitchCase="'Responsible'">{{user.role}}</span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="bs-tooltip-bottom">
+    <button mat-raised-button color="primary" class="m-2"  (click)="view(user.id)" >View</button>
+    <button mat-raised-button color="accent" class="m-2"  (click)="edit(user.id)" >Edit</button>
+    <button mat-raised-button color="warn" >Delete</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text"
+             (ngModelChange)="onNameChange($event)"
+             matInput
+             [formControl]="projectFilter"
+             [matAutocomplete]="auto">
+      <button mat-button *ngIf="projectFilter.value" matSuffix mat-icon-button aria-label="Clear" (click)="projectFilter.setValue('')">
+        <mat-icon [ngStyle]="{'color':'red'}">close</mat-icon>
+      </button>
+      <mat-autocomplete  #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <div class="row">
+    <div *ngFor="let project of filteredProjects" class="col-lg-4 col-md-6 col-sm-12 col-xl-4 my-3">
+      <project-card [project]="project" ></project-card>
+    </div>
+  </div>
+</div>

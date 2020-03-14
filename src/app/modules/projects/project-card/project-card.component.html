@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>
+    {{project.id}}
+  </mat-card-title>
+  <mat-card-header>
+    <a [routerLink]="['/users/view',project.responsible]"> {{project.responsible}} </a>
+  </mat-card-header>
+  <mat-card-content>
+    <p> {{project.description}} </p>
+    Members :
+    <div class="mx-2" *ngFor="let userID of project.team">
+      <a [routerLink]="['/users/view',userID]"> {{userID}} </a>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="bs-tooltip-bottom">
+    <button mat-raised-button color="primary" class="m-2"  (click)="edit(project.id)" >Edit</button>
+    <button mat-raised-button color="warn" >Delete</button>
+  </mat-card-actions>
+</mat-card>

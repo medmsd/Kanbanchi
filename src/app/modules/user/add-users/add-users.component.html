@@ -1,0 +1,45 @@
+<form (ngSubmit)="submit()" [formGroup]="userForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input formControlName="id" id="id" name="id" matInput>
+    <mat-error *ngIf="f.id.invalid">
+      <span *ngIf="f.id.errors.required">Username is required</span>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input formControlName="password" required minlength="8" type="password" id="password"
+           name="password" matInput>
+    <mat-error *ngIf="f.password.invalid">
+      <span *ngIf="f.password.errors.minlength">Password is short</span>
+      <span *ngIf="f.password.errors.required">Password is required</span>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input required formControlName="firstName" id="firstName" name="firstName" matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input required formControlName="lastName" id="lastName" name="lastName" matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input required formControlName="email" id="email" name="email" matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Role</mat-label>
+    <mat-select  formControlName="role" id="role" name="role" matNativeControl required>
+      <mat-option [value]="'admin'">Admin</mat-option>
+      <mat-option [value]="'responsible'">Responsible</mat-option>
+      <mat-option [value]="'developer'">Developer</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <button [disabled]="userForm.invalid" type="submit" mat-raised-button color="primary">Submit</button>
+</form>

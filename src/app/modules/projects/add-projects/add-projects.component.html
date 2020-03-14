@@ -1,0 +1,25 @@
+<form [formGroup]="formGroup">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input  id="name" formControlName="name" matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input  id="description" formControlName="description" matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Responsible</mat-label>
+    <mat-select [value]="null" id="responsible" formControlName="responsible"  required>
+      <mat-option *ngFor="let responsible of responsibles" [value]="responsible.id">{{responsible.id}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Team</mat-label>
+    <mat-select [value]="[]" id="team" formControlName="team" multiple  required>
+      <mat-option *ngFor="let developer of developers" [value]="developer.id">{{developer.id}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
