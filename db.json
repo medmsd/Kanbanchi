@@ -10,18 +10,18 @@
     },
     {
       "id": "Houssem",
-      "password": "triki",
       "firstName": "Houssem",
       "lastName": "Triki",
       "email": "houssem.triki99@gmail.com",
+      "password": "trikitriki",
       "role": "Developer"
     },
     {
       "id": "Belhssan",
-      "password": "jerbi",
       "firstName": "Belhssan",
       "lastName": "Jerbi",
       "email": "jerbi@gmail.com",
+      "password": "jerbijerbi",
       "role": "Responsible"
     }
   ],
@@ -43,13 +43,20 @@
       "createdBy": "Troliste",
       "date": "3/14/2020, 12:30:25 AM",
       "type": "todo"
-    } ,
+    },
     {
       "id": 2,
       "name": "Second Task",
       "createdBy": "Troliste",
       "date": "3/14/2020, 12:20:00 AM",
       "type": "doing"
+    },
+    {
+      "id": 3,
+      "name": "Third Task",
+      "createdBy": "Houssem",
+      "date": "4/14/2020, 9:20:00 AM",
+      "type": "done"
     }
   ]
 }
