@@ -14,7 +14,7 @@ import {MatPaginator, MatSort, MatTableDataSource, Sort} from '@angular/material
 })
 export class ViewUsersComponent implements OnInit {
   private displayedColumns: string[] = ['id', 'name', 'date', 'type'];
-  private $user: Observable<User>;
+  private user: User;
   private tasks: Task[];
   private sortedTasks: Task[];
 
@@ -29,7 +29,7 @@ export class ViewUsersComponent implements OnInit {
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
-    this.$user = this.userService.find(id);
+    this.userService.find(id).subscribe((user)=>this.user=user);
     this.taskService.getUserTask(id).subscribe((tasks) => {
       this.tasks = tasks;
       this.sortedTasks = tasks;

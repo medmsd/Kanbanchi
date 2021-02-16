@@ -36,7 +36,7 @@ export class LayoutPageComponent implements OnInit {
       }
       else{
         this.user = null;
-        this.router.navigate(["",{outlets:{login:"login"}}])
+        this.router.navigate(["/login"]);
       }
     })
 

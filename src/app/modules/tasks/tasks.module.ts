@@ -1,17 +1,18 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { TasksRoutingModule } from './tasks-routing.module';
-import { TasksComponent } from './tasks.component';
-import {MaterialModule} from '../../shared/material.module';
+import {TasksRoutingModule} from './tasks-routing.module';
+import {TasksComponent} from './tasks.component';
+import {SharedModule} from '../../shared/shared.module';
 
 
 @NgModule({
   declarations: [TasksComponent],
-    imports: [
-        CommonModule,
-        TasksRoutingModule,
-        MaterialModule
-    ]
+  imports: [
+    CommonModule,
+    TasksRoutingModule,
+    SharedModule
+  ]
 })
-export class TasksModule { }
+export class TasksModule {
+}

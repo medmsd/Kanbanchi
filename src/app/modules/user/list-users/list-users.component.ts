@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../../core/models/user';
 import {UserService} from '../../../core/services/user/user.service';
-import {Router} from '@angular/router';
 import {FormControl} from '@angular/forms';
-import {$e} from 'codelyzer/angular/styles/chars';
 
 @Component({
   selector: 'app-list-users',
@@ -31,7 +29,7 @@ export class ListUsersComponent implements OnInit {
     if (userID == '') {
       this.filteredUsers = this.users;
     } else {
-      this.filteredUsers = this.users.filter((user) => user.id == userID);
+      this.filteredUsers = this.users.filter((user) => user.id.includes(userID));
     }
   }
 

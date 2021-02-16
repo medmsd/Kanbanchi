@@ -3,12 +3,12 @@
     {{project.id}}
   </mat-card-title>
   <mat-card-header>
-    <a [routerLink]="['/users/view',project.responsible]"> {{project.responsible}} </a>
+    <a [routerLink]="['/users/view',project.manager]"> {{project.manager}} </a>
   </mat-card-header>
   <mat-card-content>
     <p> {{project.description}} </p>
     Members :
-    <div class="mx-2" *ngFor="let userID of project.team">
+    <div class="mx-2" *ngFor="let userID of project.developers">
       <a [routerLink]="['/users/view',userID]"> {{userID}} </a>
     </div>
   </mat-card-content>

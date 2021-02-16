@@ -29,7 +29,7 @@ export class ProjectsListComponent implements OnInit {
     if (projectID == '') {
       this.filteredProjects = this.projects;
     } else {
-      this.filteredProjects = this.projects.filter((project) => project.id == projectID);
+      this.filteredProjects = this.projects.filter((project) => project.id.includes(projectID));
     }
   }
 }
